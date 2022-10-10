@@ -18,7 +18,7 @@ form {
 }
 input {
   color: #ffffff;
-  border: 0, 4px solid #dcdcdc;
+  border: 0, 1px solid #dcdcdc;
   width: 270px;
   height: 30px;
   border-radius: 10px;
@@ -28,13 +28,13 @@ input {
 }
 textarea {
   color: #ffffff;
-  border: 0, 4px solid #dcdcdc;
+  border: 0, 1px solid #dcdcdc;
   width: 270px;
   height: 80px;
   border-radius: 10px;
   font-size: 8px;
   padding: 25px;
-  margin: 5px 0;
+  margin: 5px 0 5px;
 }
 button {
   background: #fad34f;
@@ -43,9 +43,11 @@ button {
   border: 1px solid #fad34f;
   font-size: 10px;
   line-height: 12px;
-  font-weight: 200;
+  font-weight: 550;
   border-radius: 500px;
-  padding: 20px;
+  padding: 15px;
+  display: block;
+  margin: 0;
   color: #ffffff;
 }
 button:hover {
@@ -54,12 +56,12 @@ button:hover {
   color: #fad34f;
 }
 footer {
-  width: 25%;
+  padding: 5px;
+ margin: 12%;
+  width: 30%;
   color: #3e3e3e;
   font-size: 10px;
 }
 footer .social-links a {
-  margin: 0 20px;
-  border-radius: 50%;
   transition: all 100ms;
 }

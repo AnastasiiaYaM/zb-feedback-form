@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useRef, useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import "./App.css";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,7 +6,6 @@ import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faPinterest } from "@fortawesome/free-brands-svg-icons";
-import ReCAPTCHA from "react-google-recaptcha";
 
 type FormState = {
   email: string;
@@ -21,8 +20,6 @@ type ServiceMessage = {
 function App() {
   const formId = "";
   const formSparkUrl = `https://submit-form.com/${formId}`;
-  const recaptchaKey = "6Lf70WsiAAAAAOyk0ed2CE4i2vb5zB5kz3DdrsrC";
-  const recaptchaRef = useRef<any>();
 
   const initialFormState = {
     email: "",
@@ -33,7 +30,6 @@ function App() {
   const [formState, setFormState] = useState<FormState>(initialFormState);
   const [submitting, setSubmitting] = useState<boolean>(false);
   const [message, setMessage] = useState<ServiceMessage>();
-  const [recaptchaToken, setReCaptchaToken] = useState<string>();
 
   const submitForm = async (event: FormEvent) => {
     event.preventDefault();
@@ -44,23 +40,20 @@ function App() {
 
   const postSubmission = async () => {
     const payload = {
-      ...formState,
-      "g-recaptcha-response": recaptchaToken,
-    };
+      ...formState};
 
     try {
       const result = await axios.post(formSparkUrl, payload);
       console.log(result);
       setMessage({
         class: "bg-green-500",
-        text: "Thank you.",
+        text: "Thank you!",
       });
       setFormState(initialFormState);
-      recaptchaRef.current.reset();
     } catch (error) {
       console.log(error);
       setMessage({
-        class: "bg-red-500",
+        class: "bg-danger",
         text: "Sorry, there was a problem. Please try again.",
       });
     }
@@ -74,10 +67,6 @@ function App() {
     const updatedFormState = { ...formState };
     updatedFormState[key] = value;
     setFormState(updatedFormState);
-  };
-
-  const updateRecaptchaToken = (token: string | null) => {
-    setReCaptchaToken(token as string);
   };
 
   return (
@@ -111,13 +100,6 @@ function App() {
             value={formState?.message}
             placeholder="Your message*"
           ></textarea>
-
-          <ReCAPTCHA
-            ref={recaptchaRef}
-            sitekey={recaptchaKey}
-            onChange={updateRecaptchaToken}
-          />
-
           <button disabled={submitting} className="">
             {submitting ? "Submitting..." : "Submit"}
           </button>
@@ -127,7 +109,7 @@ function App() {
         <a href="http://www.linkedin.com">
           <FontAwesomeIcon icon={faLinkedinIn} />
         </a>
-         <a href="http://www.twitter.com">
+        <a href="http://www.twitter.com">
           <FontAwesomeIcon icon={faTwitter} />
         </a>
         <a href="http://www.facebook.com">
