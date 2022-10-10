@@ -1,48 +1,65 @@
 h1 {
   font-family: Apercu Arabic Pro;
-  font-size: 30px;
+  font-size: 16px;
   font-weight: 200;
-  line-height: 40px;
+  line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
   color: #3e3e3e;
 }
 .Container {
-  padding: 80px;
+  padding-top: 70px;
+  padding-left: 60px;
 }
 
 form {
   color: #ffffff;
   width: 400px;
 }
-input,
+input {
+  color: #ffffff;
+  border: 0, 4px solid #dcdcdc;
+  width: 270px;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 8px;
+  padding: 10px 25px 10px;
+  margin: 5px 0;
+}
 textarea {
   color: #ffffff;
   border: 0, 4px solid #dcdcdc;
-  width: 400px;
+  width: 270px;
+  height: 80px;
   border-radius: 10px;
-  font-size: 10px;
+  font-size: 8px;
+  padding: 25px;
+  margin: 5px 0;
 }
 button {
   background: #fad34f;
-  height: 40px;
-  width: 140px;
+  height: 20px;
+  width: 120px;
   border: 1px solid #fad34f;
   font-size: 10px;
   line-height: 12px;
   font-weight: 200;
   border-radius: 500px;
-  padding: 30px;
-}
-button:hover {
-  transition: all 100ms easy-in-out;
+  padding: 20px;
   color: #ffffff;
 }
-
+button:hover {
+  transition: all 100ms;
+  background: #ffffff;
+  color: #fad34f;
+}
+footer {
+  width: 25%;
+  color: #3e3e3e;
+  font-size: 10px;
+}
 footer .social-links a {
   margin: 0 20px;
-  color: #3e3e3e;
-  padding: 10px 14px;
-  font-size: 15px;
-  transition: all 100ms easy-in-out;
+  border-radius: 50%;
+  transition: all 100ms;
 }

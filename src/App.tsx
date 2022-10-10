@@ -81,46 +81,36 @@ function App() {
   };
 
   return (
-    <div className="h-full flex justify-center flex-col">
+    <div className="">
       <div className="Container">
         <h1>
           <span>Reach out to us!</span>
         </h1>
-        {message && (
-          <div className={`my-4 text-white w-full p-4 ${message.class}`}>
-            {message.text}
-          </div>
-        )}
+        {message && <div className={`${message.class}`}>{message.text}</div>}
         <form onSubmit={submitForm} className="">
-          <div className="">
-            <input
-              onChange={updateFormControl}
-              className=""
-              type="text"
-              id="name"
-              value={formState?.name}
-              placeholder="Your name"
-            />
-          </div>
-          <div className="">
-            <input
-              onChange={updateFormControl}
-              className=""
-              type="email"
-              id="email"
-              value={formState?.email}
-              placeholder="Your email"
-            />
-          </div>
-          <div className="">
-            <textarea
-              onChange={updateFormControl}
-              className=""
-              id="message"
-              value={formState?.message}
-              placeholder="Your message"
-            ></textarea>
-          </div>
+          <input
+            onChange={updateFormControl}
+            className=""
+            type="text"
+            id="name"
+            value={formState?.name}
+            placeholder="Your name*"
+          />
+          <input
+            onChange={updateFormControl}
+            className=""
+            type="email"
+            id="email"
+            value={formState?.email}
+            placeholder="Your email*"
+          />
+          <textarea
+            onChange={updateFormControl}
+            className=""
+            id="message"
+            value={formState?.message}
+            placeholder="Your message*"
+          ></textarea>
 
           <ReCAPTCHA
             ref={recaptchaRef}
@@ -128,23 +118,20 @@ function App() {
             onChange={updateRecaptchaToken}
           />
 
-          <button
-            disabled={submitting}
-            className="mt-4 my-2 bg-blue-700 text-white w-full p-2 hover:bg-blue-900 transition-colors duration-200"
-          >
+          <button disabled={submitting} className="">
             {submitting ? "Submitting..." : "Submit"}
           </button>
         </form>
       </div>
-      <footer className="social-links d-flex justify-content-center">
+      <footer className="social-links d-flex p-2 justify-content-sm-around">
         <a href="http://www.linkedin.com">
           <FontAwesomeIcon icon={faLinkedinIn} />
         </a>
+         <a href="http://www.twitter.com">
+          <FontAwesomeIcon icon={faTwitter} />
+        </a>
         <a href="http://www.facebook.com">
           <FontAwesomeIcon icon={faFacebookF} />
-        </a>
-        <a href="http://www.twitter.com">
-          <FontAwesomeIcon icon={faTwitter} />
         </a>
         <a href="http://www.pinterest.com">
           <FontAwesomeIcon icon={faPinterest} />
