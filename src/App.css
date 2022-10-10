@@ -1,38 +1,48 @@
-.App {
-  text-align: center;
+h1 {
+  font-family: Apercu Arabic Pro;
+  font-size: 30px;
+  font-weight: 200;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #3e3e3e;
+}
+.Container {
+  padding: 80px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form {
+  color: #ffffff;
+  width: 400px;
+}
+input,
+textarea {
+  color: #ffffff;
+  border: 0, 4px solid #dcdcdc;
+  width: 400px;
+  border-radius: 10px;
+  font-size: 10px;
+}
+button {
+  background: #fad34f;
+  height: 40px;
+  width: 140px;
+  border: 1px solid #fad34f;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 200;
+  border-radius: 500px;
+  padding: 30px;
+}
+button:hover {
+  transition: all 100ms easy-in-out;
+  color: #ffffff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer .social-links a {
+  margin: 0 20px;
+  color: #3e3e3e;
+  padding: 10px 14px;
+  font-size: 15px;
+  transition: all 100ms easy-in-out;
 }
